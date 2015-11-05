@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app= "circlesSquares">
+  <head>
+    <meta charset="UTF-8">
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="lib/angular.js"></script>
+    <script src="lib/angular-ui-router.js"></script>
+    <script src="app.js"></script>
+    <script src="controllers/BoardController.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Drawr</title>
+  </head>
+  <body>
+<div class="container">
+<h1>Drawr</h1>
+    <div ng-controller="BoardCtrl">
+      <table id="table-canvas" style="height: 2px;">
+        <tr ng-repeat="row in board.rows">
+          <td style="height: 2px; width: 2px; line-height: 1px;" ng-repeat="dot in row.dots" ng-mouseenter="dot.hasDot = false">
+            <img ng-if="dot.color=='red' && dot.hasDot" src="images/white_square.svg" style="height: 2px; width: 2px">
+            <img ng-if="dot.color=='orange' && dot.hasDot" src="images/white_square.svg" style="height: 2px; width: 2px">
+            <img ng-if="dot.color=='yellow' && dot.hasDot" src="images/white_square.svg" style="height: 2px; width: 2px">
+            <img ng-if="dot.color=='green' && dot.hasDot" src="images/white_square.svg" style="height: 2px; width: 2px">
+            <img ng-if="dot.color=='blue' && dot.hasDot" src="images/white_square.svg" style="height: 2px; width: 2px">
+            <img ng-if="!dot.hasDot" src="images/black_square.svg" style="height: 2px; width: 2px">
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  </body>
+</html>
