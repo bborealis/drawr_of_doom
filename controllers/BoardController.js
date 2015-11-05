@@ -2,11 +2,11 @@ function createBoard() {
   var board = {};
   board.rows = [];
 
-  for(var i = 0; i < 75; i++) {
+  for(var i = 0; i < 100; i++) {
     var row = {};
     row.dots = [];
 
-    for(var j = 0; j < 75; j++) {
+    for(var j = 0; j < 100; j++) {
       var dot = {};
       dot.hasDot = false;
       row.dots.push(dot);
@@ -34,16 +34,16 @@ function getDot(board, row, column) {
 }
 
 function placeInitialDots(board) {
-  var row = Math.round(Math.random() * 4);
-  var column = Math.round(Math.random() * 4);
+  // var row = Math.round(Math.random() * 4);
+  // var column = Math.round(Math.random() * 4);
   var dot = getDot(board, row, column);
   dot.hasDot = true;
   dot.color = randomColorGenerator();
 }
 
 function placeInitialDots(board) {
-  for(var i = 0; i < 75; i++) {
-    for(var j = 0; j < 75; j++) {
+  for(var i = 0; i < 100; i++) {
+    for(var j = 0; j < 100; j++) {
       board.rows[i].dots[j].hasDot = true;
       board.rows[i].dots[j].color = randomColorGenerator();
     }
